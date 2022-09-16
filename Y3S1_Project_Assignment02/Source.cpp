@@ -8,7 +8,7 @@
 	#define PRINTSTUDENTNAMES(student_vec)for(STUDENT_DATA student: (student_vec)){printStudent(student);}
 #endif
 
-#define PRERELEASE
+//#define PRERELEASE
 
 #ifndef PRERELEASE
 typedef struct student_data {
@@ -111,7 +111,13 @@ std::vector<STUDENT_DATA> loadStudents() {
 int main() {
 	const std::vector<STUDENT_DATA> student_data = loadStudents();
 
-#ifdef _DEBUG
+#ifdef PRERELEASE
+	std::cout << "Executing in PreRelease mode..." << std::endl;
+#endif
+
+#ifndef _DEBUG
+	std::cout << "Executing in release mode..." << std::endl;
+#elif _DEBUG
 	PRINTSTUDENTNAMES(student_data)
 #endif
 

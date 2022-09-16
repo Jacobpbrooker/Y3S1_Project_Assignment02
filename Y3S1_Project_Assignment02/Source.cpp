@@ -43,14 +43,15 @@ std::vector<STUDENT_DATA> loadStudents() {
 }
 
 int main() {
-	std::vector<STUDENT_DATA> student_data;
+	std::vector<STUDENT_DATA> student_data = loadStudents();
 
-	student_data = loadStudents();
-
+#ifdef _DEBUG
 	for(STUDENT_DATA i: student_data)
 	{
 		std::cout << "Student: " << i.first_name << "," << i.last_name << std::endl;
 	}
+#endif
+
 
 	return 1;
 }

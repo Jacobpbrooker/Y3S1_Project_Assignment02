@@ -1,3 +1,7 @@
+// Jacob Brooker
+// CSCN 73030
+// September 16, 2022
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -18,7 +22,6 @@ typedef struct student_data {
 
 void printStudent(const STUDENT_DATA& student)
 {
-	// just need to figure out the print when defined PRERELEASE
 	std::cout << "Student: " << student.first_name << "," << student.last_name << std::endl;
 }
 
@@ -116,7 +119,7 @@ int main() {
 #endif
 
 #ifndef _DEBUG
-	std::cout << "Executing in release mode..." << std::endl;
+	std::cout << "Executing in Release mode..." << std::endl;
 #elif _DEBUG
 	PRINTSTUDENTNAMES(student_data)
 #endif

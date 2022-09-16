@@ -4,6 +4,11 @@
 #include <fstream>
 #include <sstream>
 
+#ifdef _DEBUG
+	#define PRINTSTUDENTVECTOR()for(STUDENT_DATA i: student_data){std::cout << "Student: " << i.first_name << "," << i.last_name << std::endl;}
+#endif
+
+
 typedef struct student_data {
 	std::string first_name;
 	std::string last_name;
@@ -46,12 +51,8 @@ int main() {
 	std::vector<STUDENT_DATA> student_data = loadStudents();
 
 #ifdef _DEBUG
-	for(STUDENT_DATA i: student_data)
-	{
-		std::cout << "Student: " << i.first_name << "," << i.last_name << std::endl;
-	}
+	PRINTSTUDENTVECTOR()
 #endif
-
 
 	return 1;
 }
